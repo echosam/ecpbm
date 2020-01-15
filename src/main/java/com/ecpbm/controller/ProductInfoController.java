@@ -92,7 +92,7 @@ public class ProductInfoController {
 		try {
 			file.transferTo(targetFile);
 			pi.setPic(fileName);
-			productInfoService.addProductInfo(pi);
+			productInfoService.modifyProductInfo(pi);
 			return "{\"success\":\"true\",\"message\":\"商品修改成功\"}";
 		} catch (Exception e) {
 			return "{\"success\":\"false\",\"message\":\"商品修改失败\"}";
