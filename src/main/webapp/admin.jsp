@@ -82,9 +82,9 @@
 							closable : true
 						});
 					}
-				} else if ("客户列表" == node.text) {
-					if ($('#tabs').tabs('exists', '客户列表')) {
-						$('#tabs').tabs('select', '客户列表');
+				} else if ("用户列表" == node.text) {
+					if ($('#tabs').tabs('exists', '用户列表')) {
+						$('#tabs').tabs('select', '用户列表');
 					} else {
 						$('#tabs').tabs('add', {
 							title : node.text,

@@ -14,10 +14,10 @@ public class UserInfoDynaSqlProvider {
 			{
 				SELECT("*");
 				FROM("user_info");
-				if (params.get("userinfo") != null) {
+				if (params.get("userInfo") != null) {
 					UserInfo userInfo = (UserInfo) params.get("userInfo");
 					if (userInfo.getUserName() != null && !userInfo.getUserName().equals("")) {
-						WHERE(" userName LIKE CONCAT ('%', #{userinfo.userName}, '%') ");
+						WHERE(" userName LIKE CONCAT ('%', #{userInfo.userName}, '%') ");
 					}
 				}
 			}

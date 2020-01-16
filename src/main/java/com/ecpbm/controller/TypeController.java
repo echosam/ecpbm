@@ -31,4 +31,26 @@ public class TypeController {
 		return typeList;
 	}
 	
+	@RequestMapping(value = "/addType", produces = "text/html;charset=UTF-8")
+	@ResponseBody
+	public String addType(Type type) {
+		try {
+			typeService.addType(type);
+			return "{\"success\":\"true\",\"message\":\"添加成功\"}";
+		} catch (Exception e) {
+			return "{\"success\":\"false\",\"message\":\"添加失败\"}";
+		}
+	}
+
+	@RequestMapping(value = "/updateType", produces = "text/html;charset=UTF-8")
+	@ResponseBody
+	public String updateType(Type type) {
+		try {
+			typeService.updateType(type);
+			return "{\"success\":\"true\",\"message\":\"修改成功\"}";
+		} catch (Exception e) {
+			return "{\"success\":\"false\",\"message\":\"修改失败\"}";
+		}
+	}
+	
 }

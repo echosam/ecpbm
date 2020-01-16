@@ -113,4 +113,24 @@ public class ProductInfoController {
 		return str;
 	}
 	
+	// 获取在售商品列表
+	@RequestMapping("/getOnSaleProduct")
+	@ResponseBody
+	public List<ProductInfo> getOnSaleProduct() {
+		List<ProductInfo> piList = productInfoService.getOnSaleProduct();
+		return piList;
+	}
+	
+	// 根据商品id获取商品单价
+	@RequestMapping("/getPriceById")
+	@ResponseBody
+	public String getPriceById(@RequestParam("pid") String pid) {
+		if (pid != null && !"".equals(pid)) {
+			ProductInfo pi = productInfoService.getProductInfoById(Integer.parseInt(pid));
+			return pi.getPrice() + "";
+		} else {
+			return "";
+		}
+	}
+	
 }
